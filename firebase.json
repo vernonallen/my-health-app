@@ -1,8 +1,8 @@
 {
   "apphosting": [
     {
-      "backendId": "my-health-agent",
-      "rootDir": "build",
+      "backendId": "my-health-agent-app",
+      "rootDir": "/",
       "ignore": [
         "node_modules",
         ".git",

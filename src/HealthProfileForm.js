@@ -85,38 +85,24 @@ export default function HealthProfileForm() {
   };
 
   return (
-    <div className="p-6 max-w-xl mx-auto space-y-6">
-      <h1 className="text-2xl font-bold">Health Profile Setup</h1>
-      <div className="grid gap-4">
-        <input className="border p-2 rounded" name="name" placeholder="Name" onChange={handleChange} />
-        <input className="border p-2 rounded" name="age" placeholder="Age" type="number" onChange={handleChange} />
-        <select className="border p-2 rounded" name="gender" onChange={handleChange}>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-        </select>
-        <input className="border p-2 rounded" name="height" placeholder="Height (cm)" onChange={handleChange} />
-        <input className="border p-2 rounded" name="weight" placeholder="Weight (kg)" onChange={handleChange} />
-        <input className="border p-2 rounded" name="neck" placeholder="Neck (cm)" onChange={handleChange} />
-        <input className="border p-2 rounded" name="waist" placeholder="Waist (cm)" onChange={handleChange} />
+    <div className="p-6 max-w-xl mx-auto">
+      <h1 className="text-2xl font-bold mb-4">Health Profile Setup</h1>
+      <div className="space-y-4">
+        <p><label><span className="block font-medium">Name</span><input className="border p-2 rounded w-full" name="name" onChange={handleChange} /></label></p>
+        <p><label><span className="block font-medium">Age</span><input className="border p-2 rounded w-full" name="age" type="number" onChange={handleChange} /></label></p>
+        <p><label><span className="block font-medium">Gender</span><select className="border p-2 rounded w-full" name="gender" onChange={handleChange}><option value="male">Male</option><option value="female">Female</option></select></label></p>
+        <p><label><span className="block font-medium">Height (cm)</span><input className="border p-2 rounded w-full" name="height" onChange={handleChange} /></label></p>
+        <p><label><span className="block font-medium">Weight (kg)</span><input className="border p-2 rounded w-full" name="weight" onChange={handleChange} /></label></p>
+        <p><label><span className="block font-medium">Neck (cm)</span><input className="border p-2 rounded w-full" name="neck" onChange={handleChange} /></label></p>
+        <p><label><span className="block font-medium">Waist (cm)</span><input className="border p-2 rounded w-full" name="waist" onChange={handleChange} /></label></p>
         {form.gender === "female" && (
-          <input className="border p-2 rounded" name="hip" placeholder="Hip (cm)" onChange={handleChange} />
+          <p><label><span className="block font-medium">Hip (cm)</span><input className="border p-2 rounded w-full" name="hip" onChange={handleChange} /></label></p>
         )}
-        <input className="border p-2 rounded" name="bodyFat" placeholder="Body Fat % (optional)" onChange={handleChange} />
-        <select className="border p-2 rounded" name="goal" onChange={handleChange}>
-          <option value="fat_loss">Fat Loss</option>
-          <option value="muscle_gain">Muscle Gain</option>
-          <option value="endurance">Endurance</option>
-          <option value="general">General Fitness</option>
-        </select>
-        <select className="border p-2 rounded" name="activity" onChange={handleChange}>
-          <option value="sedentary">Sedentary</option>
-          <option value="light">Light</option>
-          <option value="moderate">Moderate</option>
-          <option value="active">Active</option>
-          <option value="very_active">Very Active</option>
-        </select>
-        <textarea className="border p-2 rounded" name="notes" placeholder="Additional notes" onChange={handleChange} />
-        <button className="bg-blue-600 text-white p-2 rounded" onClick={calculate}>Calculate + Save</button>
+        <p><label><span className="block font-medium">Body Fat % (optional)</span><input className="border p-2 rounded w-full" name="bodyFat" onChange={handleChange} /></label></p>
+        <p><label><span className="block font-medium">Goal</span><select className="border p-2 rounded w-full" name="goal" onChange={handleChange}><option value="fat_loss">Fat Loss</option><option value="muscle_gain">Muscle Gain</option><option value="endurance">Endurance</option><option value="general">General Fitness</option></select></label></p>
+        <p><label><span className="block font-medium">Activity Level</span><select className="border p-2 rounded w-full" name="activity" onChange={handleChange}><option value="sedentary">Sedentary</option><option value="light">Light</option><option value="moderate">Moderate</option><option value="active">Active</option><option value="very_active">Very Active</option></select></label></p>
+        <p><label><span className="block font-medium">Additional Notes</span><textarea className="border p-2 rounded w-full" name="notes" onChange={handleChange} /></label></p>
+        <p><button className="bg-blue-600 text-white p-2 rounded" onClick={calculate}>Calculate + Save</button></p>
       </div>
       {result && (
         <div className="mt-6 p-4 bg-gray-100 rounded">
@@ -129,3 +115,5 @@ export default function HealthProfileForm() {
     </div>
   );
 }
+
+
