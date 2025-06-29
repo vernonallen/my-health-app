@@ -1,0 +1,15 @@
+{
+  "apphosting": [
+    {
+      "backendId": "my-health-agent",
+      "rootDir": "build",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "functions"
+      ]
+    }
+  ]
+}
